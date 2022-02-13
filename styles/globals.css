@@ -1,16 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Noto+Sans&family=Poppins:wght@500&display=swap");
+
+:root {
+  --color-white: #fff;
+
+  --color-green-1: #219653;
+
+  --color-blue-0: hsl(214, 67%, 42%);
+  --color-blue-1: rgba(47, 128, 237, 1);
+  --color-blue-2: rgba(151, 190, 244, 1);
+
+  --color-gray-2: rgba(79, 79, 79, 1);
+  --color-gray-3: rgba(130, 130, 130, 1);
+  
+  --color-gray-4: rgba(189, 189, 189, 1);
+  --color-gray-4-light: rgba(169, 169, 169, 1);
+
+  --color-gray-5-darker: rgba(224, 224, 224, 1);
+  --color-gray-5-dark: rgba(246, 248, 251, 1);
+  --color-gray-5: rgba(250, 250, 251, 1);
+  
+  --color-gray-6: rgb(242, 242, 242);
+
+
+  --font-family-poppins: "Poppins", sans-serif;
+  --font-family-noto-sans: "Noto Sans", sans-serif;
+  --font-family-montserrat: "Montserrat", sans-serif;
+
+  --font-size: 10px;
+  --font-weight: 500;
+
+  --box-shadow-container: 0px 4px 12px rgba(0, 0, 0, 0.1);
+
+  --border-radius-rounded: 1.2rem;
+  --border-radius-button: 0.8rem;
+  --border-radius-icon: 100%;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+body {
+  background-color: var(--color-gray-5);
+  color: var(--color-gray-2);
+  font-family: var(--font-family-poppins);
+  font-weight: var(--font-weight);
+}
+
+p,
+h1 {
+  font-weight: var(--font-weight);
+  margin: 0;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+#__next {
+  display: grid;
+
+  grid-template-rows: 1fr auto;
+
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  align-self: center;
+  justify-self: center;
+
+  background-color: var(--color-white);
+
+  box-shadow: var(--box-shadow-container);
+  border-radius: var(--border-radius-rounded);
+
+  width: 40rem;
+  padding: 3.6rem 3.2rem;
+}
+
+.title--uploading {
+  margin-bottom: 3rem;
+}
+
+.title--uploaded {
+  margin-bottom: 2.5rem;
+}
+
+.title--upload {
+  margin-bottom: 1.6rem;
+}
+
+.title {
+  font-size: 1.8rem;
+}
+
+.subtitle {
+  color: var(--color-gray-3);
+}
+
+.subtitle--upload {
+  margin-bottom: 3rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.footer {
+  color: var(--color-gray-4-light);
+  text-align: center;
+  font-family: var(--font-family-montserrat);
+  font-size: 1.4rem;
+  margin-bottom: 2.4rem;
+}
+
+.footer a {
+  color: inherit;
+  font-weight: 700;
+}
+
+.file-drop {
+  padding: 3.5rem 0 4rem 0;
+  margin-bottom: 1.9rem;
+
+  background-color: var(--color-gray-5-dark);
+  border-radius: var(--border-radius-rounded);
+  border: 0.1rem dashed var(--color-blue-2);
+}
+
+.file-drop p {
+  font-size: 1.2rem;
+  color: var(--color-gray-4);
+}
+
+.file-drop img {
+  margin-bottom: 3.8rem;
+}
+
+.file-upload > p {
+  font-size: 1.2rem;
+  color: var(--color-gray-4);
+  margin-bottom: 2.2rem;
+}
+
+.button {
+  border: none;
+  border-radius: var(--border-radius-button);
+
+  background-color: var(--color-blue-1);
+  color: var(--color-white);
+
+  font-family: var(--font-family-noto-sans);
+
+  padding: 0.8rem 1.6rem;
+
+  cursor: pointer;
+
+  transition: background-color .2s;
+}
+
+.button:hover,.button:focus {
+  background-color: var(--color-blue-0);
+}
+
+.upload-bar {
+  position: relative;
+
+  height: 0.6rem;
+  width: 100%;
+
+  background-color: var(--color-gray-6);
+
+  border-radius: var(--border-radius-button);
+
+  overflow: hidden;
+}
+
+.upload-bar__indicator {
+  width: 10rem;
+  height: 100%;
+
+  position: absolute;
+
+  background-color: var(--color-blue-1);
+
+  border-radius: var(--border-radius-button);
+
+  animation-name: uploading;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes uploading {
+  from {
+    left: -10rem;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+.uploaded-icon { 
+  background-color: var(--color-green-1);
+  color: var(--color-white);
+
+  border-radius: var(--border-radius-icon);
+
+  padding: 0.25rem;
+  margin-bottom: 1.1rem;
+
+  align-self: center;
+}
+
+.uploaded-image {
+  border-radius: var(--border-radius-rounded);
+  background-color: var(--color-gray-4);
+  margin-bottom: 2.6rem;
+}
+
+.uploaded-input {
+  border: 0.1rem solid var(--color-gray-5-darker);
+  border-radius: var(--border-radius-button);
+  
+  padding: 0.2rem;
+
+  display: flex;
+}
+
+.uploaded-input > input {
+  border: none;
+  outline: none;
+
+  padding: 1.1rem 1.5rem 1.1rem 0.71rem;
+  flex: 1;
+
+  color: var(--color-gray-2);
+  font-size: 1rem;
+
+  text-overflow: ellipsis;
+}
+
+.uploaded-input__button {
+  font-size: 0.8rem;
 }
