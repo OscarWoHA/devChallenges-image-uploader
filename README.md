@@ -1,34 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Image Uploader
 
-## Getting Started
+This project was made for a challenge (Image Uploader) by [devChallenges.io](https://devchallenges.io/challenges/O2iGT9yBd6xZBrOcVirx).
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+# Requirements
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Node >= v14
+- Firebase (and Firebase Storage)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 🚀 How to work on the project ?
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+1. First you have to clone the repository
+    
+    ```bash
+    git clone https://github.com/OscarWoHA/devChallenges-image-uploader.git
+    ```    
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+2. **Then, Install the dependencies :**
 
-## Learn More
+    ```bash
+    npm install
+    ```    
 
-To learn more about Next.js, take a look at the following resources:
+4. Rename the `.env.example` to `.env.local` And change the file to your needs, 
+   by default you have :
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    ```dotenv
+    NEXT_PUBLIC_FIREBASE_apiKey="AIzaSyCN7kBk8cwRqGPif2MAfYpubAru900s-Uc"
+    NEXT_PUBLIC_FIREBASE_authDomain="dev-challenges-oscar.firebaseapp.com"
+    NEXT_PUBLIC_FIREBASE_projectId="dev-challenges-oscar"
+    NEXT_PUBLIC_FIREBASE_storageBucket="dev-challenges-oscar.appspot.com"
+    NEXT_PUBLIC_FIREBASE_messagingSenderId="902852428165"
+    NEXT_PUBLIC_FIREBASE_appId="1:902852428165:web:519d7f43e215f4b90784ec"
+    NEXT_PUBLIC_FIREBASE_measurementId="G-DJ16V4B4VD"
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+5. **And launch the project :**
 
-## Deploy on Vercel
+    ```bash
+    npm run dev
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    The frontend client will be available at [http://localhost:3000](http://localhost:3000).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+6. **Open the source code and start rocking ! 😎**

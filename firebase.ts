@@ -1,17 +1,16 @@
-
 import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCN7kBk8cwRqGPif2MAfYpubAru900s-Uc",
-    authDomain: "dev-challenges-oscar.firebaseapp.com",
-    projectId: "dev-challenges-oscar",
-    storageBucket: "dev-challenges-oscar.appspot.com",
-    messagingSenderId: "902852428165",
-    appId: "1:902852428165:web:519d7f43e215f4b90784ec",
-    measurementId: "G-DJ16V4B4VD",
-  };
-  
-  initializeApp(firebaseConfig);
-  
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_apiKey,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_authDomain,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_projectId,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_storageBucket,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_messagingSenderId,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_appId,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_measurementId,
+};
+
+initializeApp(firebaseConfig);
+
 export const storage = getStorage();
